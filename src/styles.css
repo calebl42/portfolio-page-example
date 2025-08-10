@@ -1,25 +1,27 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: "Public Sans", sans-serif;
 }
 
 header {
   background-color: rgb(20, 146, 171);
-  padding: 5% 10% 10% 10%;
+  padding: 7% 10% 10% 10%;
   transform: skewY(-10deg) translateY(-20vh);
-  display: flex;
 }
 
 #about-me {
   background-color: white;
-  padding: 20px;
-  padding-bottom: 30px;
-  width: 30vw;
-  height: 20vh;
   display: flex;
   align-items: center;
-  transform: skewY(10deg) translateY(20vh) translateX(100%);
+  max-width: 40vw;
+  min-width: 500px;
+  max-height: 20vh;
+  min-height: 150px;
+  padding: 2%;
+  transform: skewY(10deg) translate(70%, 20vh);
   box-shadow: 0px 0px 4px 1px grey;
+  font-size: 15px;
 }
 
 #about-text {
@@ -52,7 +54,7 @@ h2 {
 
 #container {
   display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-template: 1fr 1fr / repeat(auto-fit, minmax(250px, 1fr) );
   gap: 5vw;
 }
 
@@ -62,6 +64,7 @@ h2 {
   align-items: center;
   box-shadow: 0px 0px 3px 1px lightgrey;
   padding: 6% 8%;
+  max-width: 250px;
 }
 
 .card * {
@@ -94,10 +97,74 @@ footer {
 #big-icons * {
   margin: 2%;
 }
-@media (max-width: 1024px) {
 
+@media (max-width: 1024px) {  
+
+  #about-me {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    min-height: 30vh;
+    max-height: 40vh;
+    min-width: 50vw;
+    padding: 2%;
+    transform: skewY(10deg) translate(60%, 20vh);
+    box-shadow: 0px 0px 4px 1px grey;
+    font-size: 15px;
+    margin-top: 20vh;
+  }
+
+  #main-profile {
+    margin-left: -40vw;
+    margin-top: -30vh;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 2px black;  
+    transform: translate(40vw, -40vh); 
+  }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 701px) {
+  header {
+    margin-bottom: 10vh;
+    padding-bottom: 0vh;
+  }
 
+  #about-me {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: skewY(10deg) translateX(22%);
+    box-shadow: 0px 0px 4px 1px grey;
+    font-size: 15px;
+    margin-bottom: 35vh;
+  }
+
+  #about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-profile {
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    transform: translate(0, -6vh);
+    text-shadow: 0px 0px 2px black;  
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 5vh;
+  }
 }
